@@ -25,8 +25,8 @@ class  RiskCtl{
     }
     async del(ctx){
         const {phone}=ctx.request.body;
-        const Risk= await Risk.findOneAndRemove({phone});
-        if(!Risk){ctx.throw(404,'文件不存在！')}
+        const risk= await Risk.findOneAndRemove({phone});
+        if(!risk){ctx.throw(404,'文件不存在！')}
         ctx.status=204;
     }
 };
