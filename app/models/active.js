@@ -6,6 +6,7 @@ const Active=new Schema({
     q1:{type:Number,required:false},
     q2:{type:Number,required:false},
     q3:{type:Number,required:false},
+    // dfad
     q4:{type:Number,required:false},
     q5:{type:Number,required:false},
     q6:{type:Number,required:false},

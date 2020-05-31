@@ -24,8 +24,8 @@ class  UserCtl{
     }
     async del(ctx){
         const {phone} =ctx.requst.body;
-        const Ability= await Ability.findOneAndRemove({phone});
-        if(!Ability){ctx.throw(404,'文件不存在！')}
+        const ability= await Ability.findOneAndRemove({phone});
+        if(!ability){ctx.throw(404,'文件不存在！')}
         ctx.status=204;
     }
 };
