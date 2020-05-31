@@ -22,7 +22,7 @@ class  Par_qCtl{
     async del(ctx){
         const { phone } = ctx.request.body;
         const Par_q= await Par_q.findOneAndRemove({phone});
-        const Par_q= await Par_q.findByIdAndRemove(ctx.params.id);
+        /* const Par_q= await Par_q.findByIdAndRemove(ctx.params.id); */
         if(!Par_q){ctx.throw(404,'文件不存在！')}
         ctx.status=204;
 

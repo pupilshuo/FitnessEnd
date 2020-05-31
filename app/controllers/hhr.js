@@ -26,7 +26,7 @@ class  hhrCtl{
     async del(ctx){
         const { phone } = ctx.request.body;
         const hhr= await hhr.findByIdAndRemove({phone});
-        const hhr= await hhr.findByIdAndRemove(ctx.params.id);
+        /* const hhr= await hhr.findByIdAndRemove(ctx.params.id); */
         if(!hhr){ctx.throw(404,'文件不存在！')}
         ctx.status=204;
 
