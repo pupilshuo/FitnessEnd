@@ -1,7 +1,14 @@
 const Par_q=require('../models/par_q');
 class  Par_qCtl{
     async find(ctx){
-        ctx.body= await Par_q.find();
+        const { phone } = ctx.request.body;
+        const parq= await Par_q.findOne({phone});
+        if(parq['age']==null){
+            ctx.throw(405,'宁没有填问卷');
+        }
+        else{
+            ctx.body=parq;
+        }
     }
     async create(ctx){
         const {phone}=ctx.request.body;
@@ -13,7 +20,7 @@ class  Par_qCtl{
     }
     async update(ctx){
         const {phone}=ctx.request.body;
-        const par_q=await Par_q.findOneAndUpdate({phone},ctx.request.body)
+        const par_q=await Par_q.findOneAndUpdate({phone},ctx.request.body,{new:true})
         if(!par_q){
             ctx.throw(404,'文件不存在！')
         }

@@ -1,7 +1,8 @@
 const hhr=require('../models/hhr');
 class  hhrCtl{
     async find(ctx){
-        ctx.body= await hhr.find();
+        const { phone } = ctx.request.body;
+        ctx.body= await hhr.findOne({phone});
     }
     async create(ctx){
         const {phone}=ctx.request.body;
@@ -17,7 +18,7 @@ class  hhrCtl{
     }
     async update(ctx){
         const {phone}=ctx.request.body;
-        const Hhr=await hhr.findOneAndUpdate({phone},ctx.request.body)
+        const Hhr=await hhr.findOneAndUpdate({phone},ctx.request.body,{new:true})
         if(!Hhr){
             ctx.throw(404,'文件不存在！')
         }

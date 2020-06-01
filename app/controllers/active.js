@@ -1,8 +1,8 @@
 const Active=require('../models/active');
 class  ActiveCtl{
     async find(ctx){
-
-        ctx.body= await Active.find();
+        const { phone } = ctx.request.body;
+        ctx.body= await Active.findOne({phone});
     }
     async create(ctx){
         const {phone}=ctx.request.body;
@@ -14,7 +14,7 @@ class  ActiveCtl{
     }
     async update(ctx){
         const {phone} =ctx.request.body
-        const active=await Active.findOneAndUpdate({phone},ctx.request.body)
+        const active=await Active.findOneAndUpdate({phone},ctx.request.body,{new:true})
         if(!active){
             ctx.throw(404,'文件不存在！')
         }
