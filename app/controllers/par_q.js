@@ -9,6 +9,9 @@ class  Par_qCtl{
         else{
             ctx.body=a;
         }
+        // else{
+        //     ctx.body=A;
+        // }
     }
     async create(ctx){
         const {phone}=ctx.request.body;
