@@ -1,23 +1,23 @@
-const Project=require('../models/project');
+const Pro=require('../models/pro');
 class  ProjectCtl{
     async find(ctx){
         const {phone}=ctx.request.body;
-        ctx.body= await Project.findOne({phone});
+        ctx.body= await Pro.findOne({phone});
         const answer = ctx.body;
         console.log(answer['phone'])
     }
     async create(ctx){
         const {phone}=ctx.request.body;
-        const repeatProject=await Project.findOne({phone});
+        const repeatProject=await Pro.findOne({phone});
         if(repeatProject){ctx.throw(409,'文件已经存在')}
-        // const repeatProject=await Project.findOne({phone});
+        // const repeatProject=await Pro.findOne({phone});
         // if(repeatProject){ctx.throw(409,'文件已经存在')}
-        const project=await new Project(ctx.request.body).save();
+        const project=await new Pro(ctx.request.body).save();
         ctx.body=project ;
     }
     async update(ctx){
         const {phone}=ctx.request.body;
-        const Project=await Project.findOneAndUpdate({phone},ctx.request.body)
+        const Project=await Pro.findOneAndUpdate({phone},ctx.request.body,{new:true})
         if(!Project){
             ctx.throw(404,'文件不存在！')
         }
@@ -25,7 +25,7 @@ class  ProjectCtl{
     }
     async del(ctx){
         const {phone}=ctx.request.body;
-        const Project= await Project.findOneAndRemove({phone});
+        const Project= await Pro.findOneAndRemove({phone});
         if(!Project){ctx.throw(404,'文件不存在！')}
         ctx.status=204;
     }

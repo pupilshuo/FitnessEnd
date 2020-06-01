@@ -13,7 +13,7 @@ class  Par_qCtl{
     }
     async update(ctx){
         const {phone}=ctx.request.body;
-        const par_q=await Par_q.findOneAndUpdate({phone},ctx.request.body)
+        const par_q=await Par_q.findOneAndUpdate({phone},ctx.request.body,{new:true})
         if(!par_q){
             ctx.throw(404,'文件不存在！')
         }

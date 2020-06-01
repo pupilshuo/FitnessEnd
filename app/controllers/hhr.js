@@ -17,7 +17,7 @@ class  hhrCtl{
     }
     async update(ctx){
         const {phone}=ctx.request.body;
-        const Hhr=await hhr.findOneAndUpdate({phone},ctx.request.body)
+        const Hhr=await hhr.findOneAndUpdate({phone},ctx.request.body,{new:true})
         if(!Hhr){
             ctx.throw(404,'文件不存在！')
         }

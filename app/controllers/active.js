@@ -14,7 +14,7 @@ class  ActiveCtl{
     }
     async update(ctx){
         const {phone} =ctx.request.body
-        const active=await Active.findOneAndUpdate({phone},ctx.request.body)
+        const active=await Active.findOneAndUpdate({phone},ctx.request.body,{new:true})
         if(!active){
             ctx.throw(404,'文件不存在！')
         }

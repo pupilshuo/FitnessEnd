@@ -4,7 +4,6 @@ class  UserCtl{
         const {phone}=ctx.request.body;
         console.log({phone});
         ctx.body= await Users.findOne({phone});
-
     }
     async create(ctx){
         const {phone}=ctx.request.body;
@@ -15,7 +14,7 @@ class  UserCtl{
     }
     async update(ctx){
         const {phone}=ctx.request.body;
-       const users=await Users.findOneAndUpdate({phone},ctx.request.body)
+       const users=await Users.findOneAndUpdate({phone},ctx.request.body,{new:true})
        if(!users){
            ctx.throw(404,'用户不存在！')
        }

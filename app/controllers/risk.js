@@ -17,7 +17,7 @@ class  RiskCtl{
     }
     async update(ctx){
         const {phone}=ctx.request.body;
-        const risk=await Risk.findOneAndUpdate({phone},ctx.request.body)
+        const risk=await Risk.findOneAndUpdate({phone},ctx.request.body,{new:true})
         if(!risk){
             ctx.throw(404,'文件不存在！')
         }
