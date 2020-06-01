@@ -1,7 +1,14 @@
 const Par_q=require('../models/par_q');
 class  Par_qCtl{
     async find(ctx){
-        ctx.body= await Par_q.find();
+        const { phone } = ctx.request.body;
+        const parq= await Par_q.findOne({phone});
+        if(parq['age']==null){
+            ctx.throw(405,'宁没有填问卷');
+        }
+        else{
+            ctx.body=parq;
+        }
     }
     async create(ctx){
         const {phone}=ctx.request.body;

@@ -1,8 +1,8 @@
 const Active=require('../models/active');
 class  ActiveCtl{
     async find(ctx){
-
-        ctx.body= await Active.find();
+        const { phone } = ctx.request.body;
+        ctx.body= await Active.findOne({phone});
     }
     async create(ctx){
         const {phone}=ctx.request.body;
