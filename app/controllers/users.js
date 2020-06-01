@@ -31,6 +31,7 @@ class  UserCtl{
     async login(ctx){
     const users= await Users.findOne(ctx.request.body);
     if(!users){ctx.throw(401,'用户名或密码不正确！');}
+    ctx.body = users;
     }
     };
 
