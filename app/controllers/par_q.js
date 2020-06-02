@@ -4,7 +4,7 @@ class  Par_qCtl{
         const { phone } = ctx.request.body;
         const a= await Par_q.findOne({phone});
         if(!a['q1']){
-            ctx.throw(405,'宁没有填问卷');
+            ctx.throw(405,'你没有填问卷');
         }
         else{
             ctx.body=a;
