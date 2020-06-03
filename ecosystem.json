@@ -15,10 +15,14 @@
     "production":{
       "user":"fitness_man",
       "host":["47.114.117.170"],
+      "port":"39999",
       "ref":"origin/master",
       "repo":"git@github.com:pupilshuo/FitnessEnd.git",
-      "path":"/www/end/fitnessEnd",
-      "ssh_options":"StrictHostKeyChecking=no"
+      "path":"/fitness/end/fitnessEnd",
+      "ssh_options":"StrictHostKeyChecking=no",
+      "env":{
+        "NODE_ENV":"production"
+      }
     }
   }
 }
