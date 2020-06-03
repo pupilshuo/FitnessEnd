@@ -1,6 +1,6 @@
 /*这是注释*/
 {
-  "apps:":[
+  "apps":[
     {
       "name":"End",
       "script":"/app/index.js",
