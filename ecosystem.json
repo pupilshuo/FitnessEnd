@@ -19,7 +19,7 @@
       "port":"39999",
       "ref":"origin/master",
       "repo":"git@github.com:pupilshuo/FitnessEnd.git",
-      "path":"/fitness/end/fitnessEnd",
+      "path":"/fitness/end/production",
       "ssh_options":"StrictHostKeyChecking=no",
       "env":{
         "NODE_ENV":"production"
