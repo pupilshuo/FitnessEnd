@@ -3,7 +3,7 @@
   "apps":[
     {
       "name":"End",
-      "script":"/app/index.js",
+      "script":"./app/index.js",
       "env":{
         "COMMON_VARIABLE":"true"
       },
