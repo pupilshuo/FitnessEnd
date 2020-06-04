@@ -3,7 +3,7 @@ const {Schema,model}=mongoose;
 const Par_q=new Schema({
     __v:{type:Number,select:false},
     phone:{type: Number,required:false},
-    age:{type:String,required:false},
+    age:{type:Number,required:false},
     q1:{type:Number,required: false},
     q2:{type:Number,required:false},
     q3:{type:Number,required:false},

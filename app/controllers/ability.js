@@ -1,8 +1,8 @@
 const Ability=require('../models/ability');
 class  UserCtl{
     async find(ctx){
-        const {phone}=ctx.request.body;
-        ctx.body=await Ability.findOne({phone});
+        const {phone}=ctx.query;
+        ctx.body= await Ability.findOne({phone});
     }
     async create(ctx){
 
