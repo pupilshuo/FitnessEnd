@@ -24,5 +24,6 @@ app.use(koaBodyParser())
 
 routing(app);
 
-app.listen(8080,()=>{
+//修改了端口号，为部署做准备
+app.listen(3000,()=>{
     console.log('服务器已经部署')});

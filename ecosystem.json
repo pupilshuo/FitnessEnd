@@ -1,0 +1,30 @@
+/*这是注释*/
+{
+  "apps":[
+    {
+      "name":"End",
+      "script":"./app/index.js",
+      "env":{
+        "COMMON_VARIABLE":"true"
+      },
+      "env_production":{
+        "NODE_ENV":"production"
+      }
+    }
+  ],
+  "deploy":{
+    "production":{
+      "user":"fitness_man",
+      "host":["47.114.117.170"],
+      "port":"39999",
+      "ref":"origin/master",
+      "repo":"git@github.com:pupilshuo/FitnessEnd.git",
+      "path":"/fitness/end/production",
+      "ssh_options":"StrictHostKeyChecking=no",
+      
+      "env":{
+        "NODE_ENV":"production"
+      }
+    }
+  }
+}
