@@ -2,7 +2,20 @@ const Par_q=require('../models/par_q');
 class  Par_qCtl{
     async find(ctx){
         const {phone}=ctx.query;
-        ctx.body= await Par_q.findOne({phone});
+        const result= await Par_q.findOne({phone});//只要有一个一就看医生
+        if(result['q1']== 0||
+            result['q2'] == 0 ||
+            result['q3'] == 0 ||
+            result['q4'] == 0 ||
+            result['q5'] == 0 ||
+            result['q6'] == 0 ||
+            result['q7'] == 0
+            ){
+                ctx.body='可以运动'
+            }
+            else{
+                ctx.body='看医生'
+            }
     }
     async create(ctx){
         const {phone}=ctx.request.body;
