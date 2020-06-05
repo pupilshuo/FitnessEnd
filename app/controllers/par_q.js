@@ -3,6 +3,7 @@ class  Par_qCtl{
     async find(ctx){
         const {phone}=ctx.query;
         ctx.body= await Par_q.findOne({phone});
+        console.log(ctx.body[0])
     }
     async create(ctx){
         const {phone}=ctx.request.body;

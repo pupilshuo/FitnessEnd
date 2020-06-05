@@ -2,8 +2,8 @@ const Risk=require('../models/risk');
 class  RiskCtl{
     async find(ctx){
         const {phone}=ctx.query;
-
         ctx.body= await Risk.findOne({phone});
+        console.log(ctx.body)
     }
     async create(ctx){
         const {phone}=ctx.request.body;
