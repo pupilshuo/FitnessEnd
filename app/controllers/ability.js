@@ -3,7 +3,7 @@ class  UserCtl{
     async find(ctx){
         const {phone}=ctx.query;
         const result= await Ability.findOne({phone});
-        if (result['gender']='male') {
+        if (result['gender']='男') {
             if(result['age']<29){
                 if (result['muscle'] >= 36) {
                     ctx.body = '优秀'
