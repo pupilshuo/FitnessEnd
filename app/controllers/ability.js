@@ -1,179 +1,185 @@
 const Ability=require('../models/ability');
 class  UserCtl{
     async find(ctx){
+         let a = "";
+         let b = "";
+         let c = "";
+         let d = "";
+         
         const {phone}=ctx.query;
         const result= await Ability.findOne({phone});
-        ctx.body['gender']=result['gender']
+        console.log(result)
+        // ctx.body['gender']=result['gender']
         if (result['gender']='男') {
             if(result['age']<29){
-                if (result['muscleLevel'] >= 36) {
-                    ctx.body['1'] = '优秀'
+                if (result['muscle'] >= 36) {
+                    a = '优秀'
                 }
-                if (result['muscleLevel'] >=29 && result['muscleLevel'] <=35) {
-                    ctx.body['1'] = '很好'
+                if (result['muscle'] >=29 && result['muscle'] <=35) {
+                    a = '很好'
                 }
-                if (result['muscleLevel'] >= 22 && result['muscleLevel'] <= 28) {
-                    ctx.body['1'] = '好'
+                if (result['muscle'] >= 22 && result['muscle'] <= 28) {
+                    a = '好'
                 }
-                if (result['muscleLevel'] >= 17&& result['muscleLevel'] <= 29) {
-                    ctx.body['1'] = '一般'
+                if (result['muscle'] >= 17 && result['muscle'] <= 21) {
+                    a = '一般'
                 }
-                if (result['muscleLevel'] <= 16) {
-                    ctx.body['1'] = '需改进'
+                if (result['muscle'] <= 16) {
+                    a = '需改进'
                 }
             }
             if (result['age'] <=39 && result['age']>=30) {
-                if (result['muscleLevel'] >= 30) {
-                    ctx.body['1'] = '优秀'
+                if (result['muscle'] >= 30) {
+                    a = '优秀'
                 }
-                if (result['muscleLevel'] >= 22 && result['muscleLevel'] <= 29) {
-                    ctx.body['1'] = '很好'
+                if (result['muscle'] >= 22 && result['muscle'] <= 29) {
+                    a = '很好'
                 }
-                if (result['muscleLevel'] >= 17 && result['muscleLevel'] <= 21) {
-                    ctx.body['1'] = '好'
+                if (result['muscle'] >= 17 && result['muscle'] <= 21) {
+                    a = '好'
                 }
-                if (result['muscleLevel'] >= 12&& result['muscleLevel'] <= 16) {
-                    ctx.body['1'] = '一般'
+                if (result['muscle'] >= 12&& result['muscle'] <= 16) {
+                    a = '一般'
                 }
-                if (result['muscleLevel'] <= 11) {
-                    ctx.body['1'] = '需改进'
+                if (result['muscle'] <= 11) {
+                    a = '需改进'
                 }
             }
                 if (result['age'] <= 49 && result['age'] >= 40) {
-                    if (result['muscleLevel'] >= 25) {
-                        ctx.body['1'] = '优秀'
+                    if (result['muscle'] >= 25) {
+                        a = '优秀'
                     }
-                    if (result['muscleLevel'] >= 17 && result['muscleLevel'] <= 24) {
-                        ctx.body['1'] = '很好'
+                    if (result['muscle'] >= 17 && result['muscle'] <= 24) {
+                        a = '很好'
                     }
-                    if (result['muscleLevel'] >= 13 && result['muscleLevel'] <= 16) {
-                        ctx.body['1'] = '好'
+                    if (result['muscle'] >= 13 && result['muscle'] <= 16) {
+                        a = '好'
                     }
-                    if (result['muscleLevel'] >= 10 && result['muscleLevel'] <= 12) {
-                        ctx.body['1'] = '一般'
+                    if (result['muscle'] >= 10 && result['muscle'] <= 12) {
+                        a = '一般'
                     }
-                    if (result['muscleLevel'] <= 9) {
-                        ctx.body['1'] = '需改进'
+                    if (result['muscle'] <= 9) {
+                        a = '需改进'
                     }
                 }
                 if (result['age'] <= 59 && result['age'] >= 50) {
-                    if (result['muscleLevel'] >= 21) {
-                        ctx.body['1'] = '优秀'
+                    if (result['muscle'] >= 21) {
+                        a = '优秀'
                     }
-                    if (result['muscleLevel'] >= 13 && result['muscleLevel'] <= 20) {
-                        ctx.body['1'] = '很好'
+                    if (result['muscle'] >= 13 && result['muscle'] <= 20) {
+                        a = '很好'
                     }
-                    if (result['muscleLevel'] >= 10 && result['muscleLevel'] <= 12) {
-                        ctx.body['1'] = '好'
+                    if (result['muscle'] >= 10 && result['muscle'] <= 12) {
+                        a = '好'
                     }
-                    if (result['muscleLevel'] >= 7 && result['muscleLevel'] <= 9) {
-                        ctx.body['1'] = '一般'
+                    if (result['muscle'] >= 7 && result['muscle'] <= 9) {
+                        a = '一般'
                     }
-                    if (result['muscleLevel'] <= 7) {
-                        ctx.body['1'] = '需改进'
+                    if (result['muscle'] <= 6) {
+                        a = '需改进'
                     }
                 }
                 if (result['age'] <= 69 && result['age'] >= 60) {
-                    if (result['muscleLevel'] >= 18) {
-                        ctx.body['1'] = '优秀'
+                    if (result['muscle'] >= 18) {
+                        a = '优秀'
                     }
-                    if (result['muscleLevel'] >= 11 && result['muscleLevel'] <= 17) {
-                        ctx.body['1'] = '很好'
+                    if (result['muscle'] >= 11 && result['muscle'] <= 17) {
+                        a = '很好'
                     }
-                    if (result['muscleLevel'] >= 8 && result['muscleLevel'] <= 10) {
-                        ctx.body['1'] = '好'
+                    if (result['muscle'] >= 8 && result['muscle'] <= 10) {
+                        a = '好'
                     }
-                    if (result['muscleLevel'] >= 5 && result['muscleLevel'] <= 7) {
-                        ctx.body['1'] = '一般'
+                    if (result['muscle'] >= 5 && result['muscle'] <= 7) {
+                        a = '一般'
                     }
-                    if (result['muscleLevel'] <=4) {
-                        ctx.body['1'] = '需改进'
+                    if (result['muscle'] <=4) {
+                        a = '需改进'
                     }
                 }
         } else {
                 if (result['age'] <=29) {
-                    if (result['muscleLevel'] >= 30) {
-                        ctx.body['1'] = '优秀'
+                    if (result['muscle'] >= 30) {
+                        a = '优秀'
                     }
-                    if (result['muscleLevel'] >= 21 && result['muscleLevel'] <= 29) {
-                        ctx.body['1'] = '很好'
+                    if (result['muscle'] >= 21 && result['muscle'] <= 29) {
+                        a = '很好'
                     }
-                    if (result['muscleLevel'] >= 15 && result['muscleLevel'] <= 20) {
-                        ctx.body['1'] = '好'
+                    if (result['muscle'] >= 15 && result['muscle'] <= 20) {
+                        a = '好'
                     }
-                    if (result['muscleLevel'] >= 10 && result['muscleLevel'] <= 14) {
-                        ctx.body['1'] = '一般'
+                    if (result['muscle'] >= 10 && result['muscle'] <= 14) {
+                        a = '一般'
                     }
-                    if (result['muscleLevel'] <= 9) {
-                        ctx.body['1'] = '需改进'
+                    if (result['muscle'] <= 9) {
+                        a = '需改进'
                     }
                 }
                 if (result['age'] <= 39 && result['age'] >= 30) {
-                    if (result['muscleLevel'] >= 27) {
-                        ctx.body['1'] = '优秀'
+                    if (result['muscle'] >= 27) {
+                        a = '优秀'
                     }
-                    if (result['muscleLevel'] >= 20 && result['muscleLevel'] <= 26) {
-                        ctx.body['1'] = '很好'
+                    if (result['muscle'] >= 20 && result['muscle'] <= 26) {
+                        a = '很好'
                     }
-                    if (result['muscleLevel'] >= 13 && result['muscleLevel'] <= 19) {
-                        ctx.body['1'] = '好'
+                    if (result['muscle'] >= 13 && result['muscle'] <= 19) {
+                        a = '好'
                     }
-                    if (result['muscleLevel'] >= 8 && result['muscleLevel'] <= 12) {
-                        ctx.body['1'] = '一般'
+                    if (result['muscle'] >= 8 && result['muscle'] <= 12) {
+                        a = '一般'
                     }
-                    if (result['muscleLevel'] <= 7) {
-                        ctx.body['1'] = '需改进'
+                    if (result['muscle'] <= 7) {
+                        a = '需改进'
                     }
                 }
                     if (result['age'] <= 49 && result['age'] >= 40) {
-                        if (result['muscleLevel'] >= 24) {
-                            ctx.body['1'] = '优秀'
+                        if (result['muscle'] >= 24) {
+                            a = '优秀'
                         }
-                        if (result['muscleLevel'] >= 15 && result['muscleLevel'] <= 23) {
-                            ctx.body['1'] = '很好'
+                        if (result['muscle'] >= 15 && result['muscle'] <= 23) {
+                            a = '很好'
                         }
-                        if (result['muscleLevel'] >= 11 && result['muscleLevel'] <= 14) {
-                            ctx.body['1'] = '好'
+                        if (result['muscle'] >= 11 && result['muscle'] <= 14) {
+                            a = '好'
                         }
-                        if (result['muscleLevel'] >= 5 && result['muscleLevel'] <= 10) {
-                            ctx.body['1'] = '一般'
+                        if (result['muscle'] >= 5 && result['muscle'] <= 10) {
+                            a = '一般'
                         }
-                        if (result['muscleLevel'] <= 4) {
-                            ctx.body['1'] = '需改进'
+                        if (result['muscle'] <= 4) {
+                            a = '需改进'
                         }
                     }
                     if (result['age'] <= 59 && result['age'] >= 50) {
-                        if (result['muscleLevel'] >= 21) {
-                            ctx.body['1'] = '优秀'
+                        if (result['muscle'] >= 21) {
+                            a = '优秀'
                         }
-                        if (result['muscleLevel'] >= 11 && result['muscleLevel'] <= 20) {
-                            ctx.body['1'] = '很好'
+                        if (result['muscle'] >= 11 && result['muscle'] <= 20) {
+                            a = '很好'
                         }
-                        if (result['muscleLevel'] >= 7 && result['muscleLevel'] <= 10) {
-                            ctx.body['1'] = '好'
+                        if (result['muscle'] >= 7 && result['muscle'] <= 10) {
+                            a = '好'
                         }
-                        if (result['muscleLevel'] >= 2 && result['muscleLevel'] <= 6) {
-                            ctx.body['1'] = '一般'
+                        if (result['muscle'] >= 2 && result['muscle'] <= 6) {
+                            a = '一般'
                         }
-                        if (result['muscleLevel'] <= 7) {
-                            ctx.body['1'] = '需改进'
+                        if (result['muscle'] <= 1) {
+                            a = '需改进'
                         }
                     }
                     if (result['age'] <= 69 && result['age'] >= 60) {
-                        if (result['muscleLevel'] >= 17) {
-                            ctx.body['1'] = '优秀'
+                        if (result['muscle'] >= 17) {
+                            a = '优秀'
                         }
-                        if (result['muscleLevel'] >= 12 && result['muscleLevel'] <= 16) {
-                            ctx.body['1'] = '很好'
+                        if (result['muscle'] >= 12 && result['muscle'] <= 16) {
+                             a = '很好'
                         }
-                        if (result['muscleLevel'] >= 5 && result['muscleLevel'] <= 11) {
-                            ctx.body['1'] = '好'
+                        if (result['muscle'] >= 5 && result['muscle'] <= 11) {
+                             a = '好'
                         }
-                        if (result['muscleLevel'] >= 2 && result['muscleLevel'] <= 4) {
-                            ctx.body['1'] = '一般'
+                        if (result['muscle'] >= 2 && result['muscle'] <= 4) {
+                            a = '一般'
                         }
-                        if (result['muscleLevel'] <= 1) {
-                            ctx.body['1'] = '需改进'
+                        if (result['muscle'] <= 1) {
+                            a = '需改进'
                         }
                     }
         
@@ -184,317 +190,328 @@ class  UserCtl{
         if (result['gender'] = '男') {
             if (result['age'] <=25) {
                 if (result['heart'] >= 65) {
-                    ctx.body['heartLevel'] = '出色'
+                    b = '出色'
                 }
                 if (result['heart'] >= 53 && result['heart'] < 65) {
-                    ctx.body['heartLevel'] = '良好'
+                    b = '良好'
                 }
                 if (result['heart'] >= 48 && result['heart'] < 53) {
-                    ctx.body['heartLevel'] = '高于平均'
+                    b = '高于平均'
                 }
                 if (result['heart'] >= 43 && result['heart'] < 48) {
-                    ctx.body['heartLevel'] = '平均水平'
+                    b = '平均水平'
                 }
                 if (result['heart'] >= 36 && result['heart'] < 43) {
-                    ctx.body['heartLevel'] = '低于平均'
+                    b = '低于平均'
                 }
                 if (result['heart'] < 36) {
-                    ctx.body['heartLevel'] = '弱'
+                    b = '弱'
                 }
             }
             if (result['age'] <=35&& result['age'] >= 26) {
                 if (result['heart'] >= 60) {
-                    ctx.body['heartLevel'] = '出色'
+                    b = '出色'
                 }
                 if (result['heart'] >= 50 && result['heart'] < 60) {
-                    ctx.body['heartLevel'] = '良好'
+                    b = '良好'
                 }
-                if (result['heart'] >=44&& result['heart'] < 50) {
-                    ctx.body['heartLevel'] = '高于平均'
+                if (result['heart'] >=44 && result['heart'] < 50) {
+                    b = '高于平均'
                 }
                 if (result['heart'] >= 39 && result['heart'] < 44) {
-                    ctx.body['heartLevel'] = '平均水平'
+                    b = '平均水平'
                 }
                 if (result['heart'] >= 33 && result['heart'] <39) {
-                    ctx.body['heartLevel'] = '低于平均'
+                    b = '低于平均'
                 }
                 if (result['heart'] < 33) {
-                    ctx.body['heartLevel'] = '弱'
+                    b = '弱'
                 }
             }
             if (result['age'] <= 45 && result['age'] >= 36) {
                 if (result['heart'] >= 55) {
-                    ctx.body['heartLevel'] = '出色'
+                    b = '出色'
                 }
                 if (result['heart'] >= 45 && result['heart'] < 55) {
-                    ctx.body['heartLevel'] = '良好'
+                    b = '良好'
                 }
                 if (result['heart'] >= 40 && result['heart'] < 45) {
-                    ctx.body['heartLevel'] = '高于平均'
+                    b = '高于平均'
                 }
                 if (result['heart'] >= 36 && result['heart'] < 40) {
-                    ctx.body['heartLevel'] = '平均水平'
+                    b = '平均水平'
                 }
                 if (result['heart'] >= 30 && result['heart'] < 36) {
-                    ctx.body['heartLevel'] = '低于平均'
+                    b = '低于平均'
                 }
                 if (result['heart'] < 30) {
-                    ctx.body['heartLevel'] = '弱'
+                    b = '弱'
                 }
             }
             if (result['age'] <=55 && result['age'] >= 46) {
                 if (result['heart'] >= 49) {
-                    ctx.body['heartLevel'] = '出色'
+                    b = '出色'
                 }
                 if (result['heart'] >= 40 && result['heart'] < 49) {
-                    ctx.body['heartLevel'] = '良好'
+                    b = '良好'
                 }
                 if (result['heart'] >= 36 && result['heart'] < 40) {
-                    ctx.body['heartLevel'] = '高于平均'
+                    b = '高于平均'
                 }
                 if (result['heart'] >= 32 && result['heart'] < 36) {
-                    ctx.body['heartLevel'] = '平均水平'
+                    b = '平均水平'
                 }
                 if (result['heart'] >= 27 && result['heart'] < 32) {
-                    ctx.body['heartLevel'] = '低于平均'
+                    b = '低于平均'
                 }
                 if (result['heart'] < 27) {
-                    ctx.body['heartLevel'] = '弱'
+                    b = '弱'
                 }
             }
             if (result['age'] < 65 && result['age'] >= 56) {
                 if (result['heart'] >= 43) {
-                    ctx.body['heartLevel'] = '出色'
+                    b = '出色'
                 }
                 if (result['heart'] >= 37 && result['heart'] < 43) {
-                    ctx.body['heartLevel'] = '良好'
+                    b = '良好'
                 }
                 if (result['heart'] >=33 && result['heart'] < 37) {
-                    ctx.body['heartLevel'] = '高于平均'
+                    b = '高于平均'
                 }
                 if (result['heart'] >= 30 && result['heart'] < 33) {
-                    ctx.body['heartLevel'] = '平均水平'
+                    b = '平均水平'
                 }
                 if (result['heart'] >= 25 && result['heart'] < 30) {
-                    ctx.body['heartLevel'] = '低于平均'
+                    b = '低于平均'
                 }
                 if (result['heart'] < 25) {
-                    ctx.body['heartLevel'] = '弱'
+                    b = '弱'
                 }
             }
             if (result['age'] >= 66) {
                 if (result['heart'] >= 38) {
-                    ctx.body['heartLevel'] = '出色'
+                    b = '出色'
                 }
                 if (result['heart'] >= 32 && result['heart'] < 38) {
-                    ctx.body['heartLevel'] = '良好'
+                    b = '良好'
                 }
                 if (result['heart'] >=29 && result['heart'] < 32) {
-                    ctx.body['heartLevel'] = '高于平均'
+                    b = '高于平均'
                 }
                 if (result['heart'] >= 26 && result['heart'] < 29) {
-                    ctx.body['heartLevel'] = '平均水平'
+                    b = '平均水平'
                 }
                 if (result['heart'] >= 22 && result['heart'] < 26) {
-                    ctx.body['heartLevel'] = '低于平均'
+                    b = '低于平均'
                 }
                 if (result['heart'] < 22) {
-                    ctx.body['heartLevel'] = '弱'
+                    b = '弱'
                 }
             }
         } else {
             if (result['age'] <= 25) {
                 if (result['heart'] >= 59) {
-                    ctx.body['heartLevel'] = '出色'
+                    b = '出色'
                 }
                 if (result['heart'] >= 50 && result['heart'] < 59) {
-                    ctx.body['heartLevel'] = '良好'
+                    b = '良好'
                 }
                 if (result['heart'] >= 44 && result['heart'] < 50) {
-                    ctx.body['heartLevel'] = '高于平均'
+                    b = '高于平均'
                 }
                 if (result['heart'] >= 39 && result['heart'] < 44) {
-                    ctx.body['heartLevel'] = '平均水平'
+                    b = '平均水平'
                 }
                 if (result['heart'] >= 33 && result['heart'] < 39) {
-                    ctx.body['heartLevel'] = '低于平均'
+                    b = '低于平均'
                 }
                 if (result['heart'] < 33) {
-                    ctx.body['heartLevel'] = '弱'
+                    b = '弱'
                 }
             }
             if (result['age'] <= 35 && result['age'] >= 26) {
                 if (result['heart'] >= 58) {
-                    ctx.body['heartLevel'] = '出色'
+                     b = '出色'
                 }
                 if (result['heart'] >= 48 && result['heart'] < 58) {
-                    ctx.body['heartLevel'] = '良好'
+                    b = '良好'
                 }
                 if (result['heart'] >= 43&& result['heart'] < 48) {
-                    ctx.body['heartLevel'] = '高于平均'
+                    b = '高于平均'
                 }
                 if (result['heart'] >= 37 && result['heart'] < 43) {
-                    ctx.body['heartLevel'] = '平均水平'
+                    b = '平均水平'
                 }
                 if (result['heart'] >= 32 && result['heart'] < 37) {
-                    ctx.body['heartLevel'] = '低于平均'
+                    b = '低于平均'
                 }
                 if (result['heart'] < 32) {
-                    ctx.body['heartLevel'] = '弱'
+                    b = '弱'
                 }
             }
             if (result['age'] <= 45 && result['age'] >= 36) {
                 if (result['heart'] >= 50) {
-                    ctx.body['heartLevel'] = '出色'
+                    b = '出色'
                 }
                 if (result['heart'] >= 42 && result['heart'] < 50) {
-                    ctx.body['heartLevel'] = '良好'
+                    b = '良好'
                 }
                 if (result['heart'] >= 37 && result['heart'] < 42) {
-                    ctx.body['heartLevel'] = '高于平均'
+                    b = '高于平均'
                 }
                 if (result['heart'] >= 33 && result['heart'] < 37) {
-                    ctx.body['heartLevel'] = '平均水平'
+                    b = '平均水平'
                 }
                 if (result['heart'] >= 28 && result['heart'] < 33) {
-                    ctx.body['heartLevel'] = '低于平均'
+                    b = '低于平均'
                 }
                 if (result['heart'] < 28) {
-                    ctx.body['heartLevel'] = '弱'
+                    b = '弱'
                 }
             }
             if (result['age'] <= 55 && result['age'] >= 46) {
                 if (result['heart'] >= 45) {
-                    ctx.body['heartLevel'] = '出色'
+                    b = '出色'
                 }
                 if (result['heart'] >= 36 && result['heart'] < 45) {
-                    ctx.body['heartLevel'] = '良好'
+                    b = '良好'
                 }
                 if (result['heart'] >= 32 && result['heart'] < 36) {
-                    ctx.body['heartLevel'] = '高于平均'
+                    b = '高于平均'
                 }
                 if (result['heart'] >= 29 && result['heart'] < 32) {
-                    ctx.body['heartLevel'] = '平均水平'
+                    b = '平均水平'
                 }
                 if (result['heart'] >= 25 && result['heart'] < 29) {
-                    ctx.body['heartLevel'] = '低于平均'
+                    b = '低于平均'
                 }
                 if (result['heart'] < 25) {
-                    ctx.body['heartLevel'] = '弱'
+                    b = '弱'
                 }
             }
             if (result['age'] < 65 && result['age'] >= 56) {
                 if (result['heart'] >= 40) {
-                    ctx.body['heartLevel'] = '出色'
+                    b = '出色'
                 }
                 if (result['heart'] >= 33 && result['heart'] < 40) {
-                    ctx.body['heartLevel'] = '良好'
+                    b = '良好'
                 }
                 if (result['heart'] >= 30 && result['heart'] < 33) {
-                    ctx.body['heartLevel'] = '高于平均'
+                    b = '高于平均'
                 }
                 if (result['heart'] >= 26 && result['heart'] < 30) {
-                    ctx.body['heartLevel'] = '平均水平'
+                    b = '平均水平'
                 }
                 if (result['heart'] >= 22 && result['heart'] < 26) {
-                    ctx.body['heartLevel'] = '低于平均'
+                    b = '低于平均'
                 }
                 if (result['heart'] < 22) {
-                    ctx.body['heartLevel'] = '弱'
+                    b = '弱'
                 }
             }
             if (result['age'] >= 66) {
                 if (result['heart'] >= 34) {
-                    ctx.body['heartLevel'] = '出色'
+                    b = '出色'
                 }
                 if (result['heart'] >= 29 && result['heart'] < 34) {
-                    ctx.body['heartLevel'] = '良好'
+                    b = '良好'
                 }
                 if (result['heart'] >= 26 && result['heart'] < 29) {
-                    ctx.body['heartLevel'] = '高于平均'
+                    b = '高于平均'
                 }
                 if (result['heart'] >= 23 && result['heart'] < 26) {
-                    ctx.body['heartLevel'] = '平均水平'
+                    b = '平均水平'
                 }
                 if (result['heart'] >= 19 && result['heart'] < 23) {
-                    ctx.body['heartLevel'] = '低于平均'
+                    b = '低于平均'
                 }
                 if (result['heart'] < 19) {
-                    ctx.body['heartLevel'] = '弱'
+                    b = '弱'
                 }
             }
 
         }
         if(result['gender']=='男'){
             if (result['Bend_sitting'] == 0 || result['Bend_sitting'] == 1){
-                ctx.body['FlexLevel']='优秀'
+                c='优秀'
             }
             if (result['Bend_sitting'] == 2) {
-                ctx.body['FlexLevel'] = '很好'
+                c = '很好'
             }
             if (result['Bend_sitting'] == 3) {
-                ctx.body['FlexLevel'] = '好'
+                c = '好'
             }
             if (result['Bend_sitting'] == 4) {
-                ctx.body['FlexLevel'] = '一般'
+                c = '一般'
             }
             if (result['Bend_sitting'] == 5) {
-                ctx.body['FlexLevel'] = '需改进'
+                c = '需改进'
             }
         }
         else{
             if (result['Bend_sitting'] == 0) {
-                ctx.body['FlexLevel'] = '优秀'
+                c = '优秀'
             }
             if (result['Bend_sitting'] == 1) {
-                ctx.body['FlexLevel'] = '很好'
+                c = '很好'
             }
             if (result['Bend_sitting'] == 2) {
-                ctx.body['FlexLevel'] = '好'
+                c = '好'
             }
             if (result['Bend_sitting'] == 3) {
-                ctx.body['FlexLevel'] = '一般'
+                c = '一般'
             }
             if (result['Bend_sitting'] == 4 || result['Bend_sitting'] == 5) {
-                ctx.body['FlexLevel'] = '需改进'
+                c = '需改进'
             }
         }
 
 
         if (result['gender'] == '男') {
             if (result['Bend_standing'] == 0 || result['Bend_standing'] == 1) {
-                ctx.body['FlexLevel'] = '优秀'
+                d = '优秀'
             }
             if (result['Bend_standing'] == 2) {
-                ctx.body['FlexLevel'] = '很好'
+                d = '很好'
             }
             if (result['Bend_standing'] == 3) {
-                ctx.body['FlexLevel'] = '好'
+                d = '好'
             }
             if (result['Bend_standing'] == 4) {
-                ctx.body['FlexLevel'] = '一般'
+                d = '一般'
             }
             if (result['Bend_standing'] == 5) {
-                ctx.body['FlexLevel'] = '需改进'
+                d = '需改进'
             }
         }
         else {
             if (result['Bend_standing'] == 0) {
-                ctx.body['FlexLevel'] = '优秀'
+                d = '优秀'
             }
             if (result['Bend_standing'] == 1) {
-                ctx.body['FlexLevel'] = '很好'
+                d = '很好'
             }
             if (result['Bend_standing'] == 2) {
-                ctx.body['FlexLevel'] = '好'
+                d = '好'
             }
             if (result['Bend_standing'] == 3) {
-                ctx.body['FlexLevel'] = '一般'
+                d = '一般'
             }
             if (result['Bend_standing'] == 4 || result['Bend_standing'] == 5) {
-                ctx.body['FlexLevel'] = '需改进'
+                d = '需改进'
             }
         }
+      console.log(a)
+      console.log(b)
+      console.log(c)
+      console.log(d)
+
+           let  dic = new Array();
+                dic.push(a)
+                dic.push(b)
+                dic.push(c)
+                dic.push(d)
+        ctx.body = dic
 }
     async create(ctx){
 
