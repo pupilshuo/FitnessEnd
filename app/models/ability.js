@@ -8,6 +8,10 @@ const Ability=new Schema({
     Bend_sitting:{type:Number,required:false},
     Bend_standing:{type:Number,required:false},
     gender: { type: String, required: false},
-    age: { type: Number, required: false}
+    age: { type: Number, required: false},
+    muscle_Status: { type: Object, required: false },
+    flexible_Status: { type: Object, required: false },
+    heartLung_Status: { type: Object, required: false },
+    ExerciseRiskActiveStep: { type: Number, required: false }
 });
 module.exports=model('Ability',Ability)

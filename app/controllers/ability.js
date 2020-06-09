@@ -10,7 +10,7 @@ class  UserCtl{
         const result= await Ability.findOne({phone});
         console.log(result)
         // ctx.body['gender']=result['gender']
-        if (result['gender']='男') {
+        if (result['gender']=+'男') {
             if(result['age']<29){
                 if (result['muscle'] >= 36) {
                     a = '优秀'
@@ -187,7 +187,7 @@ class  UserCtl{
 
 
 
-        if (result['gender'] = '男') {
+        if (result['gender'] =='男') {
             if (result['age'] <=25) {
                 if (result['heart'] >= 65) {
                     b = '出色'
@@ -511,6 +511,10 @@ class  UserCtl{
                 dic.push(b)
                 dic.push(c)
                 dic.push(d)
+        dic.push(result['muscle_Status'])
+        dic.push(result[' flexible_Status'])
+        dic.push(result['heartLung_Status'])
+        dic.push(result['ExerciseRiskActiveStep'])
         ctx.body = dic
 }
     async create(ctx){
