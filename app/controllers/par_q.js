@@ -11,11 +11,16 @@ class  Par_qCtl{
             result['q6'] == 0 ||
             result['q7'] == 0
             ){
-                ctx.body='可以运动'
+                a='可以运动'
             }
             else{
-                ctx.body='看医生'
+                a=ctx.body='看医生'
             }
+        let dic = new Array();
+        dic.push(a)
+        dic.push(result['ParQ_Status'])
+        dic.push(result['ExerciseRiskActiveStep'])
+        ctx.body = dic
     }
     async create(ctx){
         const {phone}=ctx.request.body;

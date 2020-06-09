@@ -10,7 +10,7 @@ class  UserCtl{
         const result= await Ability.findOne({phone});
         console.log(result)
         // ctx.body['gender']=result['gender']
-        if (result['gender']=+'男') {
+        if (result['gender']=='男') {
             if(result['age']<29){
                 if (result['muscle'] >= 36) {
                     a = '优秀'
