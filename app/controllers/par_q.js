@@ -1,7 +1,7 @@
 const Par_q=require('../models/par_q');
 class  Par_qCtl{
     async find(ctx){
-        
+        let a = ""
         const {phone}=ctx.query;
         const result= await Par_q.findOne({phone});//只要有一个一就看医生
         if(result['q1']== 0||
@@ -12,10 +12,10 @@ class  Par_qCtl{
             result['q6'] == 0 ||
             result['q7'] == 0
             ){
-               let a='可以运动'
+               a='可以运动'
             }
             else{
-               let a='看医生'
+               a='看医生'
             }
         let dic = new Array();
         dic.push(a)
