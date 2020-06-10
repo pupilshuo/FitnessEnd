@@ -511,10 +511,6 @@ class  UserCtl{
                 dic.push(b)
                 dic.push(c)
                 dic.push(d)
-        dic.push(result['muscle_Status'])
-        dic.push(result[' flexible_Status'])
-        dic.push(result['heartLung_Status'])
-        dic.push(result['ExerciseRiskActiveStep'])
         ctx.body = dic
 }
     async create(ctx){

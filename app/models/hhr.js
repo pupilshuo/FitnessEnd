@@ -9,7 +9,6 @@ const HeartHeadRisk=new Schema({
     q4:{type:Number,required:false},
     q5:{type:Number,required:false},
     q6:{type:Number,required:false},
-    Cardiovascular_Status: { type: Object, required: false },
-    ExerciseRiskActiveStep: { type: Number, required: false }
+    
 });
 module.exports=model('heart_head_risk',HeartHeadRisk)

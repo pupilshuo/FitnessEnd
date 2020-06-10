@@ -5,7 +5,6 @@ const Risk=new Schema({
     phone:{type: Number,required:true},
     Regular_orNot:{type:Number,required: false},
     Three_one:{type:Number,required:false},
-    Screening_Status: { type: Object, required: false },
-    ExerciseRiskActiveStep: { type: Number, required: false }
+    
 });
 module.exports=model('Risk',Risk)

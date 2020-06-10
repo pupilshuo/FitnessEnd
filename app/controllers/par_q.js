@@ -19,8 +19,6 @@ class  Par_qCtl{
             }
         let dic = new Array();
         dic.push(a)
-        dic.push(result['ParQ_Status'])
-        dic.push(result['ExerciseRiskActiveStep'])
         ctx.body = dic
     }
     async create(ctx){
