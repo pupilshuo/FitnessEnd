@@ -7,5 +7,8 @@ const Ability=new Schema({
     heart:{type:Number,required:false},
     Bend_sitting:{type:Number,required:false},
     Bend_standing:{type:Number,required:false},
+    gender: { type: String, required: false},
+    age: { type: Number, required: false},
+    
 });
 module.exports=model('Ability',Ability)

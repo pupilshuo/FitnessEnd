@@ -1,7 +1,7 @@
 const hhr=require('../models/hhr');
 class  hhrCtl{
     async find(ctx){
-        const { phone } = ctx.request.body;
+        const {phone}=ctx.query;
         ctx.body= await hhr.findOne({phone});
     }
     async create(ctx){

@@ -7,5 +7,6 @@ const pro=new Schema({
   power_times:{type:Number,required:false},
   flex_times:{type:Number,required:false},
   func_times:{type:Number,required:false},
+ 
 });
 module.exports=model('pro',pro)

@@ -1,7 +1,7 @@
 const Users=require('../models/users');
 class  UserCtl{
     async find(ctx){
-        const {phone}=ctx.request.body;
+        const {phone}=ctx.query;
         console.log({phone});
         ctx.body= await Users.findOne({phone});
     }
@@ -13,7 +13,7 @@ class  UserCtl{
         ctx.body=users;
     }
     async update(ctx){
-        const {phone}=ctx.request.body;
+       const {phone}=ctx.request.body;
        const users=await Users.findOneAndUpdate({phone},ctx.request.body,{new:true})
        if(!users){
            ctx.throw(404,'用户不存在！')

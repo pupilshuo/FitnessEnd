@@ -10,5 +10,7 @@ const Active=new Schema({
     q5:{type:Number,required:false},
     q6:{type:Number,required:false},
     q7:{type:Number,required:false},
+    
+    
 });
 module.exports=model('active',Active)
