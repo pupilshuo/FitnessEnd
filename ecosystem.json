@@ -1,9 +1,9 @@
 
 {
-  "apps:":[
+  "apps":[
     {
       "name":"End",
-      "script":"/app/index.js",
+      "script":"./app/index.js",
       "env":{
         "COMMON_VARIABLE":"true"
       },
@@ -18,8 +18,13 @@
       "host":["47.114.117.170"],
       "ref":"origin/master",
       "repo":"git@github.com:pupilshuo/FitnessEnd.git",
-      "path":"/www/end/fitnessEnd",
-      "ssh_options":"StrictHostKeyChecking=no"
+      "path":"/fitness/end/production",
+      "ssh_options":"StrictHostKeyChecking=no",
+      
+      "env":{
+        "NODE_ENV":"production"
+      }
+
     }
   }
 }
