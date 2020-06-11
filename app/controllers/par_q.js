@@ -1,22 +1,36 @@
 const Par_q=require('../models/par_q');
 class  Par_qCtl{
     async find(ctx){
-        let a = ""
+        let a = "";
         const {phone}=ctx.query;
         const result= await Par_q.findOne({phone});//只要有一个一就看医生
-        if(result['q1']== 0||
-            result['q2'] == 0 ||
-            result['q3'] == 0 ||
-            result['q4'] == 0 ||
-            result['q5'] == 0 ||
-            result['q6'] == 0 ||
-            result['q7'] == 0
-            ){
-               a='可以运动'
-            }
-            else{
-               a='看医生'
-            }
+        console.log(result);
+        if (result.q7===undefined){
+            a = "没做"
+        }else if(result['q1'] == 0 &&
+                 result['q2'] == 0 &&
+                 result['q3'] == 0 &&
+                 result['q4'] == 0 &&
+                 result['q5'] == 0 &&
+                 result['q6'] == 0 &&
+                 result['q7'] == 0){
+                 a = "运动"
+        }else{
+                 a = "看医生"
+        }
+        // if( result['q1'] == 0 &&
+        //     result['q2'] == 0 &&
+        //     result['q3'] == 0 &&
+        //     result['q4'] == 0 &&
+        //     result['q5'] == 0 &&
+        //     result['q6'] == 0 &&
+        //     result['q7'] == 0
+        //     ){
+        //        a='可以运动'
+        //     }
+        //     else{
+        //        a='看医生'
+        //     }
         let dic = new Array();
         dic.push(a)
         ctx.body = dic

@@ -3,7 +3,7 @@ class StatusCtl {
     async find(ctx) {
         const { phone } = ctx.query;
         ctx.body = await Status.findOne({ phone });
-        console.log(ctx.body)
+        // console.log(ctx.body)
     }
     async create(ctx) {
         const { phone } = ctx.request.body;
