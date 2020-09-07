@@ -18,7 +18,7 @@
       "host":["39.106.173.84"],
       "port":"39999",
       "ref":"origin/master",
-      "repo":"git@github.com:pupilshuo/FitnessEnd.git",
+      "repo":"https://gitee.com/MarioTed/FitnessEnd.git",
       "path":"/football/fitness/production",
       "ssh_options":"StrictHostKeyChecking=no",
       
