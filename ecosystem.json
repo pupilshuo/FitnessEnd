@@ -14,12 +14,12 @@
   ],
   "deploy":{
     "production":{
-      "user":"fitness_man",
-      "host":["47.114.117.170"],
+      "user":"fitnessman",
+      "host":["39.106.173.84"],
       "port":"39999",
       "ref":"origin/master",
       "repo":"git@github.com:pupilshuo/FitnessEnd.git",
-      "path":"/fitness/end/production",
+      "path":"/football/fitness/production",
       "ssh_options":"StrictHostKeyChecking=no",
       
       "env":{
